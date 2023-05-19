@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.datalink.dao.CultureDao">
+    <resultMap id="cultureResultMap" type="com.datalink.entity.Culture">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="description" property="description" />
+        <result column="image" property="image" />
+        <result column="history" property="history" />
+        <result column="origin" property="origin" />
+    </resultMap>
+
+    <select id="findAll" resultMap="cultureResultMap">
+        SELECT * FROM hometown_culture
+    </select>
+
+    <select id="findById" resultMap="cultureResultMap">
+        SELECT * FROM hometown_culture WHERE id=#{id}
+    </select>
+
+    <select id="findByName" resultMap="cultureResultMap" parameterType="String">
+        SELECT * FROM hometown_culture WHERE name=#{name}
+    </select>
+    <insert id="insert" parameterType="com.datalink.entity.Culture">
+        INSERT INTO hometown_culture (name, description, image, history, origin)
+        VALUES (#{name}, #{description}, #{image}, #{history}, #{origin})
+    </insert>
+
+    <update id="update" parameterType="com.datalink.entity.Culture">
+        UPDATE hometown_culture
+        SET name=#{name}, description=#{description}, image=#{image}, history=#{history}, origin=#{origin}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM hometown_culture WHERE id=#{id}
+    </delete>
+</mapper>

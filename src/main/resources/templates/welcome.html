@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container-fluid">
+
+    <header>
+        <div class="d-flex align-items-center py-3 bg-primary">
+            <img src="/images/xiaohui.jpg" alt="计量大学Logo" width="60" height="60" class="ml-3">
+            <h1 class="text-white ml-8">计量大学</h1>
+        </div>
+        <div class="jumbotron text-center bg-primary text-white">
+            <h1 class="display-3">基于SSM的Web开发期末大作业</h1>
+            <h1 class="display-4">欢迎来的我的故乡</h1>
+            <p class="lead">Discover the beauty and culture of my hometown</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/food/list}">Foods</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/attractions}">Attractions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/cultures}">Cultures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/user/profile}">Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" th:src="@{/images/food.jpg}" alt="家乡美食">
+                <div class="card-body">
+                    <h5 class="card-title">家乡美食</h5>
+                    <p class="card-text">了解家乡的特色美食，品味家乡风味。.</p>
+                    <a href="#" class="btn btn-primary" th:href="@{/food/list}">Discover</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" th:src="@{/images/attraction.jpg}" alt="Attraction">
+                <div class="card-body">
+                    <h5 class="card-title">家乡景点</h5>
+                    <p class="card-text">探访家乡的著名景点，领略家乡的自然风光。</p>
+                    <a href="#" class="btn btn-primary" th:href="@{/attraction/list}">Discover</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" th:src="@{/images/culture.jpg}" alt="Culture">
+                <div class="card-body">
+                    <h5 class="card-title">家乡文化</h5>
+                    <p class="card-text">深入了解家乡的文化传统，发掘家乡的历史瑰宝。</p>
+                    <a href="#" class="btn btn-primary" th:href="@{/culture/list}">Discover</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" th:src="@{/images/profile.png}" alt="Profile">
+                <div class="card-body">
+                    <h5 class="card-title">个人介绍</h5>
+                    <p class="card-text">管理我的个人信息，与帐号设置</p>
+                    <a href="#" class="btn btn-primary" th:href="@{/profile}">Go to Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; 2023 施博凯. 19H034160309.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

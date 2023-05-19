@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.datalink.dao.AttractionDao">
+
+    <resultMap id="BaseResultMap" type="com.datalink.entity.Attraction">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="image" property="image" jdbcType="VARCHAR" />
+        <result column="category" property="category" jdbcType="VARCHAR" />
+        <result column="location" property="location" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT * FROM attraction
+    </select>
+
+    <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT * FROM attraction WHERE id = #{id}
+    </select>
+
+    <select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+        SELECT * FROM attraction WHERE name = #{name}
+    </select>
+
+
+    <insert id="insert" parameterType="com.datalink.entity.Attraction">
+        INSERT INTO attraction (name, description, image, category, location)
+        VALUES (#{name}, #{description}, #{image}, #{category}, #{location})
+    </insert>
+
+    <update id="update" parameterType="com.datalink.entity.Attraction">
+        UPDATE attraction
+        SET name = #{name}, description = #{description}, image = #{image}, category = #{category}, location = #{location}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        DELETE FROM attraction WHERE id = #{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.datalink.dao.UserDao">
+    <select id="findByUsername" resultType="com.datalink.entity.User" parameterType="String">
+        SELECT * FROM user WHERE username = #{username}
+    </select>
+
+    <insert id="saveUser" parameterType="com.datalink.entity.User">
+        INSERT INTO user (username, password,email) VALUES (#{username}, #{password},#{email})
+    </insert>
+</mapper>

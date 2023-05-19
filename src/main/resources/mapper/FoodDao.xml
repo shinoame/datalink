@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.datalink.dao.FoodDao">
+    <resultMap id="foodResultMap" type="com.datalink.entity.Food">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="description" property="description" />
+        <result column="image" property="image" />
+        <result column="specialty" property="specialty" />
+        <result column="origin" property="origin" />
+    </resultMap>
+
+    <select id="findAll" resultMap="foodResultMap">
+        SELECT * FROM hometown_food
+    </select>
+
+    <select id="findById" resultMap="foodResultMap" parameterType="Integer">
+        SELECT * FROM hometown_food WHERE id = #{id}
+    </select>
+    <select id="findByName" resultMap="foodResultMap" parameterType="String">
+        SELECT * FROM hometown_food WHERE name = #{name}
+    </select>
+
+
+    <insert id="insert" parameterType="com.datalink.entity.Food">
+        INSERT INTO hometown_food (name, description, image, specialty, origin)
+        VALUES (#{name}, #{description}, #{image}, #{specialty}, #{origin})
+    </insert>
+
+    <update id="update" parameterType="com.datalink.entity.Food">
+        UPDATE hometown_food
+        SET name = #{name}, description = #{description}, image = #{image}, specialty = #{specialty}, origin = #{origin}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM hometown_food WHERE id = #{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.datalink.dao.UserProfileDao">
+
+    <resultMap id="UserProfileResultMap" type="com.datalink.entity.UserProfile">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="avatar" property="avatar"/>
+        <result column="full_name" property="fullName"/>
+        <result column="bio" property="bio"/>
+        <result column="location" property="location"/>
+        <result column="email" property="email"/>
+        <result column="phone_number" property="phoneNumber"/>
+    </resultMap>
+
+    <select id="findByUsername" resultMap="UserProfileResultMap">
+        SELECT * FROM user_profile WHERE username = #{username}
+    </select>
+
+    <insert id="saveUserProfile" parameterType="com.datalink.entity.UserProfile" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user_profile (username, avatar, full_name, bio, location, email, phone_number)
+        VALUES (#{username}, #{avatar}, #{fullName}, #{bio}, #{location}, #{email}, #{phoneNumber})
+    </insert>
+
+    <update id="updateUserProfile" parameterType="com.datalink.entity.UserProfile">
+        UPDATE user_profile
+        SET
+            avatar = #{avatar},
+            full_name = #{fullName},
+            bio = #{bio},
+            location = #{location},
+            email = #{email},
+            phone_number = #{phoneNumber}
+        WHERE
+            username = #{username}
+    </update>
+
+</mapper>

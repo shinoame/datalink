@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑个人资料</title>
+    <!-- 引入 Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+<body>
+<!-- 网站头部 -->
+
+<!-- 主体内容 -->
+<div class="container my-4">
+    <h2 class="mb-3">编辑个人资料</h2>
+    <form th:action="@{/profile/update}" method="post" enctype="multipart/form-data">
+        <input type="hidden" th:value="${userProfile.id}" name="id">
+        <div class="mb-3">
+            <label for="avatar" class="form-label">头像</label>
+            <input type="file" class="form-control" id="avatar" name="avatar">
+        </div>
+        <div class="mb-3">
+            <label for="fullName" class="form-label">姓名</label>
+            <input type="text" class="form-control" id="fullName" th:value="${userProfile.fullName}" name="fullName">
+        </div>
+        <div class="mb-3">
+            <label for="bio" class="form-label">个人简介</label>
+            <textarea class="form-control" id="bio" name="bio" rows="3" th:text="${userProfile.bio}"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">位置</label>
+            <input type="text" class="form-control" id="location" th:value="${userProfile.location}" name="location">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">邮箱</label>
+            <input type="email" class="form-control" id="email" th:value="${userProfile.email}" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="phoneNumber" class="form-label">电话号码</label>
+            <input type="text" class="form-control" id="phoneNumber" th:value="${userProfile.phoneNumber}" name="phoneNumber">
+        </div>
+        <button type="submit" class="btn btn-primary">保存</button>
+    </form>
+</div>
+
+<!-- 网站页脚 -->
+</body>
+</html>

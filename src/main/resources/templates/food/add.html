@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加美食</title>
+    <!-- 引入 Bootstrap CSS 和自定义 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<!-- 网站头部 -->
+
+<!-- 主体内容 -->
+<div class="container">
+    <h2>添加美食</h2>
+    <form th:action="@{/food/save}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">名称：</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">描述：</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="imageFile">图片</label>
+            <input type="file" class="form-control" id="imageFile" name="imageFile" required>
+
+        </div>
+        <div class="form-group">
+            <label for="specialty">特色：</label>
+            <input type="text" class="form-control" id="specialty" name="specialty" required>
+        </div>
+        <div class="form-group">
+            <label for="origin">来源地：</label>
+            <input type="text" class="form-control" id="origin" name="origin" required>
+        </div>
+        <button type="submit" class="btn btn-primary">保存</button>
+        <a href="/food/list" class="btn btn-secondary">返回列表</a>
+    </form>
+</div>
+
+<!-- 网站页脚 -->
+</body>
+</html>
