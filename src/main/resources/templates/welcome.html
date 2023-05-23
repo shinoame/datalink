@@ -6,40 +6,44 @@
     <title>Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/styles.css}">
+
 </head>
 <body>
 <div class="container-fluid">
-
-    <header>
-        <div class="d-flex align-items-center py-3 bg-primary">
-            <img src="/images/xiaohui.jpg" alt="计量大学Logo" width="60" height="60" class="ml-3">
-            <h1 class="text-white ml-8">计量大学</h1>
-        </div>
-        <div class="jumbotron text-center bg-primary text-white">
-            <h1 class="display-3">基于SSM的Web开发期末大作业</h1>
-            <h1 class="display-4">欢迎来的我的故乡</h1>
-            <p class="lead">Discover the beauty and culture of my hometown</p>
-        </div>
-    </header>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">My Hometown</a>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/food/list}">Foods</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-3 border border-light rounded py-1 px-2 mr-4">
+                    <a class="nav-link text-light" th:href="@{/food/list}">Foods</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/attractions}">Attractions</a>
+                <li class="nav-item mr-3 border border-light rounded py-1 px-2 mr-4">
+                    <a class="nav-link text-light" th:href="@{/attraction/list}">Attractions</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/cultures}">Cultures</a>
+                <li class="nav-item mr-3 border border-light rounded py-1 px-2 mr-4">
+                    <a class="nav-link text-light" th:href="@{/culture/list}">Cultures</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/user/profile}">Profile</a>
+                <li class="nav-item border border-light rounded py-1 px-2 mr-4">
+                    <a class="nav-link text-light" th:href="@{/user/profile}">Profile</a>
                 </li>
             </ul>
         </div>
     </nav>
+
+    <header style="padding-top: 80px;">
+        <div class="jumbotron text-center  text-white h-auto py-1">
+            <img src="/images/xiaohui.jpg" alt="计量大学Logo" width="60" height="60" class="ml-3">
+            <h1 class="display-6 ">中国计量大学</h1>
+        </div>
+
+        <div class="jumbotron text-center  text-white h-auto py-3">
+            <h1 class="display-6">基于SSM的Web开发期末大作业</h1>
+            <h1 class="display-7">欢迎来的我的故乡</h1>
+            <p class="lead">Discover the beauty and culture of my hometown</p>
+        </div>
+    </header>
+
+
 
     <div class="row mt-4">
         <div class="col-md-3">
