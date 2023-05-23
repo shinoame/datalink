@@ -1,7 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/images/bg.png');
-    background-repeat: repeat;
+    background-image: url('/images/naibg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
 }
 
@@ -66,4 +68,24 @@ button[type="submit"]:hover {
 }
 .container-fluid {
     width: 90%;
+}
+
+ .navbar-custom {
+     background-color: rgba(255, 105, 180, 0.5); /* 粉红色，半透明 */
+ }
+.nav-item-custom {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-right: 15px;
+    background-color: rgba(255, 255, 255, 0.3); /* 白色，稍微透明 */
+}
+
+.navbar {
+    background-image: url('/images/naicut.png');
+    background-size: cover;
+    background-position: center;
+}
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明的黑色背景 */
 }
