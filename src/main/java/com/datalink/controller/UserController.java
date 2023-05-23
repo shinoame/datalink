@@ -74,4 +74,16 @@ public class UserController {
             return "login";
         }
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        request.getSession().setAttribute("currentUser",null);
+        return "login";
+    }
+    @GetMapping("/delete_account")
+    public String delete_account(HttpServletRequest request){
+        User user=(User) request.getSession().getAttribute("currentUser");
+        userService.deleteUser(user.getId());
+        return "login";
+    }
 }

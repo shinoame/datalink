@@ -5,4 +5,5 @@ import com.datalink.entity.User;
 public interface UserService {
     User findByUsername(String username);
     void saveUser(User user);
+    void deleteUser(Integer id);
 }

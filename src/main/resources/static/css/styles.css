@@ -89,3 +89,8 @@ button[type="submit"]:hover {
 .jumbotron {
     background-color: rgba(0, 0, 0, 0.5); /* 半透明的黑色背景 */
 }
+
+.nav-link {
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+}

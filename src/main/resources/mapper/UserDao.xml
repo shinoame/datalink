@@ -8,4 +8,7 @@
     <insert id="saveUser" parameterType="com.datalink.entity.User">
         INSERT INTO user (username, password,email) VALUES (#{username}, #{password},#{email})
     </insert>
+    <delete id="deleteUser" parameterType="Integer">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
 </mapper>
